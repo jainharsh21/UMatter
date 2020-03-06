@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:u_matter/pages/first_screen.dart';
 import 'package:u_matter/utils/sign_in.dart';
-import 'first_screen.dart';
+import 'create_userame.dart';
+// import 'first_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,6 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  Map data = {};
+  bool isAuth  = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -113,11 +117,16 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return FirstScreen();
+                isAuth = false;
+                if(isAuth)
+                  return FirstScreen();
+                else
+                  return CreateUsername();
               },
             ),
           );
         });
+        isAuth = true;
       },
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(40),

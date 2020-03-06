@@ -57,6 +57,20 @@ class FirstScreen extends StatelessWidget {
                     color: Colors.deepPurple,
                     fontWeight: FontWeight.bold),
               ),
+              Text(
+                'User Id',
+                style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black54),
+              ),
+              Text(
+                uID,
+                style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.deepPurple,
+                    fontWeight: FontWeight.bold),
+              ),
               SizedBox(height: 40),
               RaisedButton(
                 onPressed: () {

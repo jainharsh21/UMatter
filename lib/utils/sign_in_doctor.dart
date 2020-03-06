@@ -4,6 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final GoogleSignIn googleSignIn = GoogleSignIn();
 
+String uID;
 String name;
 String email;
 String imageUrl;
@@ -29,6 +30,7 @@ Future<String> signInWithGoogle() async {
   name = userDoctor.displayName;
   email = userDoctor.email;
   imageUrl = userDoctor.photoUrl;
+  uID = userDoctor.uid;
 
   // Only taking the first part of the name, i.e., First Name
   if (name.contains(" ")) {

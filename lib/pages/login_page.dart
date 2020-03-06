@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:u_matter/pages/first_screen.dart';
+// import 'package:u_matter/pages/first_screen.dart';
 import 'package:u_matter/utils/sign_in.dart';
 import 'create_userame.dart';
 // import 'first_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'home.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -117,9 +119,9 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                isAuth = false;
+                isAuth = true;
                 if(isAuth)
-                  return FirstScreen();
+                  return Home();
                 else
                   return CreateUsername();
               },

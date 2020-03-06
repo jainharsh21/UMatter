@@ -102,7 +102,7 @@ class _TimelineState extends State<Timeline> {
                 ),
                 subtitle: Chip(
                   label: Text(
-                    topicTypeList[0],
+                    topicTypeList[1],
                     style: TextStyle(
                         color: Colors.black, fontStyle: FontStyle.italic),
                   ),

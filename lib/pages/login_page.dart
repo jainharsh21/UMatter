@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:u_matter/utils/sign_in.dart';
-
 import 'first_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -19,6 +19,15 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Center(
+                child: Text("uMatter",style: GoogleFonts.concertOne(
+                  textStyle: TextStyle(
+                    fontSize: 50.0,
+                    fontWeight: FontWeight.w600,
+                    color: Colors.deepPurple,
+                  ),
+                ),),
+              ),
               // FlutterLogo(size: 150),
               SizedBox(height: 50),
               _signInButton(),

@@ -31,6 +31,7 @@ class _GetStartedState extends State<GetStarted> {
                     height: 180.0,
                     // width: 550.0,
                     decoration: new BoxDecoration(
+                      
                         border: new Border.all(
                             width: 1.0,
                             color: Colors

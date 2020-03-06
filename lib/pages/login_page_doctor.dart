@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:u_matter/utils/sign_in.dart';
-import 'first_screen.dart';
+import 'package:u_matter/pages/first_screen_doctor.dart';
+import 'package:u_matter/utils/sign_in_doctor.dart' as doctor;
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPageDoctor extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _LoginPageDoctorState createState() => _LoginPageDoctorState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPageDoctorState extends State<LoginPageDoctor> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/back.jpeg"),
+            image: AssetImage("assets/doctor_splash.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -109,11 +109,11 @@ class _LoginPageState extends State<LoginPage> {
     return OutlineButton(
       splashColor: Colors.grey,
       onPressed: () {
-        signInWithGoogle().whenComplete(() {
+        doctor.signInWithGoogle().whenComplete(() {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return FirstScreen();
+                return FirstScreenDoctor();
               },
             ),
           );
@@ -147,3 +147,20 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
+
+// import 'package:flutter/material.dart';
+
+// class LoginPageDoctor extends StatefulWidget {
+//   @override
+//   _LoginPageDoctorState createState() => _LoginPageDoctorState();
+// }
+
+// class _LoginPageDoctorState extends State<LoginPageDoctor> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: Text("Doctor"),
+//     );
+//   }
+// }

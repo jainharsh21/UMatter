@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:u_matter/pages/categories.dart';
 import 'package:u_matter/pages/profile.dart';
+import 'package:u_matter/pages/semantic.dart';
 import 'package:u_matter/pages/timeline.dart';
 import 'package:u_matter/pages/upload.dart';
 
@@ -48,7 +49,7 @@ class _HomeState extends State<Home> {
           Timeline(),
           Categories(),
           Upload(),
-          Semantics(),
+          Semantic(),
           Profile(),
         ],
         controller: pageController,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart';
+import 'package:u_matter/utils/sign_in.dart';
 
 class Upload extends StatefulWidget {
   @override
@@ -7,6 +9,11 @@ class Upload extends StatefulWidget {
 }
 
 class _UploadState extends State<Upload> {
+  Map data = {
+    'userType' : 'regular',
+    'googleID' : uID,
+    'hidden' : 'false',
+  };
   TextEditingController _titleController = TextEditingController();
   TextEditingController _textController = TextEditingController();
   // String selectedValue = "test";
@@ -26,6 +33,12 @@ class _UploadState extends State<Upload> {
     "middleAged",
     "20s",
   ];
+  submitData(Map data) async{
+    String url = "http://192.168.43.102:3001/api/createArticle";
+    final response = await post(url,body: data);
+    print(response.statusCode);
+    print(response.body);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,6 +102,7 @@ class _UploadState extends State<Upload> {
                       setState(() {
                         selectedValue = val;
                       });
+                      data['topicType'] = selectedValue;
                       // selectedValue = val;
                     }),
                 Padding(
@@ -107,13 +121,19 @@ class _UploadState extends State<Upload> {
                       setState(() {
                         selectedValue2 = val;
                       });
+                      data['catering'] = selectedValue2;
                       // selectedValue = val;
                     }),
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: OutlineButton(
                     splashColor: Colors.grey,
-                    onPressed: () {},
+                    onPressed: () {
+                      data['title'] = _titleController.text;
+                      data['text'] = _textController.text;
+                      // print(data);
+                      submitData(data);
+                    },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40)),
                     highlightElevation: 10,

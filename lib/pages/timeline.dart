@@ -61,62 +61,90 @@ class _TimelineState extends State<Timeline> {
         ),
         backgroundColor: Colors.white,
       ),
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Card(
-              margin: EdgeInsets.all(15.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
-              ),
-              elevation: 10.0,
-              child: ListTile(
-                contentPadding: EdgeInsets.all(8.0),
-                leading: CircleAvatar(
-                  child: Image.network(imageUrl),
-                ),
-                subtitle: Chip(
-                  label: Text(
-                    topicTypeList[0],
-                    style: TextStyle(
-                        color: Colors.black, fontStyle: FontStyle.italic),
+      body: _articles.isEmpty
+          ? Center(child: CircularProgressIndicator(
+            backgroundColor: Colors.black,
+          ))
+          : SafeArea(
+              child: Column(
+                children: <Widget>[
+                  Card(
+                    margin: EdgeInsets.all(15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                    elevation: 10.0,
+                    child: ListTile(
+                      contentPadding: EdgeInsets.all(8.0),
+                      leading: CircleAvatar(
+                        child: Image.network(imageUrl),
+                      ),
+                      subtitle: Chip(
+                        label: Text(
+                          topicTypeList[2],
+                          style: TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      title: Text(
+                        titleList[2],
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),Card(
+                    margin: EdgeInsets.all(15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                    elevation: 10.0,
+                    child: ListTile(
+                      contentPadding: EdgeInsets.all(8.0),
+                      leading: CircleAvatar(
+                        child: Image.network(imageUrl),
+                      ),
+                      subtitle: Chip(
+                        label: Text(
+                          topicTypeList[1],
+                          style: TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      title: Text(
+                        titleList[1],
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
-                ),
-                title: Text(
-                  titleList[0],
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
+                  Card(
+                    margin: EdgeInsets.all(15.0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                    elevation: 10.0,
+                    child: ListTile(
+                      contentPadding: EdgeInsets.all(8.0),
+                      leading: CircleAvatar(
+                        child: Image.network(imageUrl),
+                      ),
+                      subtitle: Chip(
+                        label: Text(
+                          topicTypeList[0],
+                          style: TextStyle(
+                              color: Colors.black, fontStyle: FontStyle.italic),
+                        ),
+                      ),
+                      title: Text(
+                        titleList[0],
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Card(
-              margin: EdgeInsets.all(15.0),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(25.0),
-              ),
-              elevation: 10.0,
-              child: ListTile(
-                contentPadding: EdgeInsets.all(8.0),
-                leading: CircleAvatar(
-                  child: Image.network(imageUrl),
-                ),
-                subtitle: Chip(
-                  label: Text(
-                    topicTypeList[1],
-                    style: TextStyle(
-                        color: Colors.black, fontStyle: FontStyle.italic),
-                  ),
-                ),
-                title: Text(
-                  titleList[1],
-                  style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

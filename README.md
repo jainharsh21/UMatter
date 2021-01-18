@@ -1,16 +1,16 @@
-# u_matter
+# UMatter
 
-A new Flutter project.
+## UMatter is a platform created for people around the world who are facing mental related problems and/or want to get some knowledge related to it.
 
-## Getting Started
+### Project Created for Algorithm 6.0 Hackathon
 
-This project is a starting point for a Flutter application.
+## Features
 
-A few resources to get you started if this is your first Flutter project:
+#### It Allows the user to sign up with a single tap
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+#### Users can post about various topics related to mental health and can share with the world to get insights on it. They can share about what they are going through so that other people can connect with them and discuss about it.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Apart from that verified medical professionals can also post about any convenient topics and they can connect with the users too.
+
+
+
